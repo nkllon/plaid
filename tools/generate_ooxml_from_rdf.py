@@ -14,7 +14,8 @@ ROOT = Path("/Volumes/lemon/codex/plaid")
 MODEL = ROOT / "model" / "security_package.ttl"
 ONTOLOGY = ROOT / "model" / "security_ontology.ttl"
 SHAPES = ROOT / "model" / "security_shapes.ttl"
-OUTPUT_DIR = ROOT / "deliverables" / "docx_ooxml"
+OUTPUT_DIR = ROOT / "deliverables" / "docx"
+TEXT_OUTPUT_DIR = ROOT / "deliverables" / "text"
 SECDOC = Namespace("https://nkllon.com/plaid/security-doc#")
 
 
@@ -146,6 +147,50 @@ def render_document(doc: Document, graph: Graph, document_node, first: bool = Fa
             render_block(doc, graph, block)
 
 
+def render_block_text(graph: Graph, block_node) -> list[str]:
+    block_types = set(graph.objects(block_node, RDF.type))
+    if SECDOC.ParagraphBlock in block_types:
+        return [text_value(graph, block_node), ""]
+
+    if SECDOC.ListBlock in block_types:
+        ordered = str(graph.value(block_node, SECDOC.isOrdered)).lower() == "true"
+        items = sorted(graph.objects(block_node, SECDOC.hasItem), key=lambda n: sort_key(graph, n, SECDOC.itemOrder))
+        lines = []
+        for idx, item in enumerate(items, start=1):
+            prefix = f"{idx}. " if ordered else "- "
+            lines.append(prefix + text_value(graph, item))
+        lines.append("")
+        return lines
+
+    if SECDOC.TableBlock in block_types:
+        columns = sorted(graph.objects(block_node, SECDOC.hasColumn), key=lambda n: sort_key(graph, n, SECDOC.columnOrder))
+        rows = sorted(graph.objects(block_node, SECDOC.hasRow), key=lambda n: sort_key(graph, n, SECDOC.rowOrder))
+        header = " | ".join(text_value(graph, col) for col in columns)
+        separator = " | ".join("---" for _ in columns)
+        lines = [header, separator]
+        for row in rows:
+            cells = sorted(graph.objects(row, SECDOC.hasCell), key=lambda n: sort_key(graph, n, SECDOC.cellOrder))
+            lines.append(" | ".join(text_value(graph, cell) for cell in cells))
+        lines.append("")
+        return lines
+
+    return []
+
+
+def render_document_text(graph: Graph, document_node) -> str:
+    lines = [str(graph.value(document_node, SECDOC.title)), ""]
+    sections = sorted(graph.objects(document_node, SECDOC.hasSection), key=lambda n: sort_key(graph, n, SECDOC.sectionOrder))
+    for section_node in sections:
+        heading = graph.value(section_node, SECDOC.title)
+        if heading:
+            lines.append(str(heading))
+            lines.append("")
+        blocks = sorted(graph.objects(section_node, SECDOC.hasBlock), key=lambda n: sort_key(graph, n, SECDOC.blockOrder))
+        for block in blocks:
+            lines.extend(render_block_text(graph, block))
+    return "\n".join(lines).strip() + "\n"
+
+
 def load_graph() -> Graph:
     data_graph = Graph()
     for source in (ONTOLOGY, MODEL):
@@ -191,11 +236,21 @@ def build_combined_doc(graph: Graph) -> None:
     doc.save(out)
 
 
+def build_text_docs(graph: Graph) -> None:
+    documents = sorted(graph.subjects(RDF.type, SECDOC.Document), key=lambda n: sort_key(graph, n, SECDOC.documentOrder))
+    TEXT_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    for document_node in documents:
+        file_stem = str(graph.value(document_node, SECDOC.fileStem))
+        out = TEXT_OUTPUT_DIR / f"{file_stem}.txt"
+        out.write_text(render_document_text(graph, document_node))
+
+
 def main() -> None:
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     graph = load_graph()
     build_single_docs(graph)
     build_combined_doc(graph)
+    build_text_docs(graph)
 
 
 if __name__ == "__main__":

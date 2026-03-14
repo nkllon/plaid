@@ -1190,6 +1190,231 @@
     secdoc:itemOrder 1 ;
     secdoc:text "This model must be reviewed at least annually and after any material change to financial-data integrations or deployment boundaries." .
 
+<https://nkllon.com/plaid/security-doc/document/privacy-policy> a secdoc:Document ;
+    secdoc:documentOrder 13 ;
+    secdoc:fileStem "PRIVACY_POLICY" ;
+    secdoc:hasSection <https://nkllon.com/plaid/security-doc/document/privacy-policy/section/1>,
+        <https://nkllon.com/plaid/security-doc/document/privacy-policy/section/2>,
+        <https://nkllon.com/plaid/security-doc/document/privacy-policy/section/3>,
+        <https://nkllon.com/plaid/security-doc/document/privacy-policy/section/4>,
+        <https://nkllon.com/plaid/security-doc/document/privacy-policy/section/5>,
+        <https://nkllon.com/plaid/security-doc/document/privacy-policy/section/6>,
+        <https://nkllon.com/plaid/security-doc/document/privacy-policy/section/7>,
+        <https://nkllon.com/plaid/security-doc/document/privacy-policy/section/8>,
+        <https://nkllon.com/plaid/security-doc/document/privacy-policy/section/9> ;
+    secdoc:partOfPackage <https://nkllon.com/plaid/security-doc/package/plaid-security-package> ;
+    secdoc:title "Privacy Policy" .
+
+<https://nkllon.com/plaid/security-doc/document/privacy-policy/section/1> a secdoc:Section ;
+    secdoc:hasBlock <https://nkllon.com/plaid/security-doc/document/privacy-policy/section/1/block/1>,
+        <https://nkllon.com/plaid/security-doc/document/privacy-policy/section/1/block/2> ;
+    secdoc:headingLevel 2 ;
+    secdoc:sectionOrder 1 ;
+    secdoc:title "Purpose and scope" .
+
+<https://nkllon.com/plaid/security-doc/document/privacy-policy/section/1/block/1> a secdoc:ParagraphBlock ;
+    secdoc:blockOrder 1 ;
+    secdoc:text "This Privacy Policy describes how the Plaid-related software documentation, demonstration integrations, and associated runtime environments represented in this repository handle personal information and financial-data-adjacent information." .
+
+<https://nkllon.com/plaid/security-doc/document/privacy-policy/section/1/block/2> a secdoc:ParagraphBlock ;
+    secdoc:blockOrder 2 ;
+    secdoc:text "The repository itself is a public code and documentation repository. Public source control is not used as a storage location for live production secrets, Plaid access tokens, or personal financial data." .
+
+<https://nkllon.com/plaid/security-doc/document/privacy-policy/section/2> a secdoc:Section ;
+    secdoc:hasBlock <https://nkllon.com/plaid/security-doc/document/privacy-policy/section/2/block/1> ;
+    secdoc:headingLevel 2 ;
+    secdoc:sectionOrder 2 ;
+    secdoc:title "Information collected" .
+
+<https://nkllon.com/plaid/security-doc/document/privacy-policy/section/2/block/1> a secdoc:ListBlock ;
+    secdoc:blockOrder 1 ;
+    secdoc:hasItem <https://nkllon.com/plaid/security-doc/document/privacy-policy/section/2/block/1/item/1>,
+        <https://nkllon.com/plaid/security-doc/document/privacy-policy/section/2/block/1/item/2>,
+        <https://nkllon.com/plaid/security-doc/document/privacy-policy/section/2/block/1/item/3>,
+        <https://nkllon.com/plaid/security-doc/document/privacy-policy/section/2/block/1/item/4> ;
+    secdoc:isOrdered false .
+
+<https://nkllon.com/plaid/security-doc/document/privacy-policy/section/2/block/1/item/1> a secdoc:ListItem ;
+    secdoc:itemOrder 1 ;
+    secdoc:text "Repository and collaboration metadata such as GitHub usernames, issue content, pull request content, and commit history." .
+
+<https://nkllon.com/plaid/security-doc/document/privacy-policy/section/2/block/1/item/2> a secdoc:ListItem ;
+    secdoc:itemOrder 2 ;
+    secdoc:text "Operational configuration values and credentials only in controlled runtime environments, not in public source control." .
+
+<https://nkllon.com/plaid/security-doc/document/privacy-policy/section/2/block/1/item/3> a secdoc:ListItem ;
+    secdoc:itemOrder 3 ;
+    secdoc:text "Technical logs and diagnostics needed to operate integrations, excluding secrets and raw sensitive financial payloads." .
+
+<https://nkllon.com/plaid/security-doc/document/privacy-policy/section/2/block/1/item/4> a secdoc:ListItem ;
+    secdoc:itemOrder 4 ;
+    secdoc:text "If a Plaid-connected runtime environment is used, limited account, transaction, balance, or token data strictly necessary to provide the integration function." .
+
+<https://nkllon.com/plaid/security-doc/document/privacy-policy/section/3> a secdoc:Section ;
+    secdoc:hasBlock <https://nkllon.com/plaid/security-doc/document/privacy-policy/section/3/block/1> ;
+    secdoc:headingLevel 2 ;
+    secdoc:sectionOrder 3 ;
+    secdoc:title "How information is used" .
+
+<https://nkllon.com/plaid/security-doc/document/privacy-policy/section/3/block/1> a secdoc:ListBlock ;
+    secdoc:blockOrder 1 ;
+    secdoc:hasItem <https://nkllon.com/plaid/security-doc/document/privacy-policy/section/3/block/1/item/1>,
+        <https://nkllon.com/plaid/security-doc/document/privacy-policy/section/3/block/1/item/2>,
+        <https://nkllon.com/plaid/security-doc/document/privacy-policy/section/3/block/1/item/3>,
+        <https://nkllon.com/plaid/security-doc/document/privacy-policy/section/3/block/1/item/4> ;
+    secdoc:isOrdered false .
+
+<https://nkllon.com/plaid/security-doc/document/privacy-policy/section/3/block/1/item/1> a secdoc:ListItem ;
+    secdoc:itemOrder 1 ;
+    secdoc:text "To develop, test, secure, and operate software integrations." .
+
+<https://nkllon.com/plaid/security-doc/document/privacy-policy/section/3/block/1/item/2> a secdoc:ListItem ;
+    secdoc:itemOrder 2 ;
+    secdoc:text "To authenticate to third-party services and maintain service availability." .
+
+<https://nkllon.com/plaid/security-doc/document/privacy-policy/section/3/block/1/item/3> a secdoc:ListItem ;
+    secdoc:itemOrder 3 ;
+    secdoc:text "To investigate incidents, perform debugging, and meet security obligations." .
+
+<https://nkllon.com/plaid/security-doc/document/privacy-policy/section/3/block/1/item/4> a secdoc:ListItem ;
+    secdoc:itemOrder 4 ;
+    secdoc:text "To comply with legal obligations or valid requests from regulators or service providers where applicable." .
+
+<https://nkllon.com/plaid/security-doc/document/privacy-policy/section/4> a secdoc:Section ;
+    secdoc:hasBlock <https://nkllon.com/plaid/security-doc/document/privacy-policy/section/4/block/1> ;
+    secdoc:headingLevel 2 ;
+    secdoc:sectionOrder 4 ;
+    secdoc:title "Data minimization and restricted data" .
+
+<https://nkllon.com/plaid/security-doc/document/privacy-policy/section/4/block/1> a secdoc:ListBlock ;
+    secdoc:blockOrder 1 ;
+    secdoc:hasItem <https://nkllon.com/plaid/security-doc/document/privacy-policy/section/4/block/1/item/1>,
+        <https://nkllon.com/plaid/security-doc/document/privacy-policy/section/4/block/1/item/2>,
+        <https://nkllon.com/plaid/security-doc/document/privacy-policy/section/4/block/1/item/3> ;
+    secdoc:isOrdered false .
+
+<https://nkllon.com/plaid/security-doc/document/privacy-policy/section/4/block/1/item/1> a secdoc:ListItem ;
+    secdoc:itemOrder 1 ;
+    secdoc:text "Only the minimum information necessary for the relevant integration or operational function may be processed." .
+
+<https://nkllon.com/plaid/security-doc/document/privacy-policy/section/4/block/1/item/2> a secdoc:ListItem ;
+    secdoc:itemOrder 2 ;
+    secdoc:text "Public repositories must not contain live Plaid credentials, access tokens, bank credentials, or raw consumer financial data." .
+
+<https://nkllon.com/plaid/security-doc/document/privacy-policy/section/4/block/1/item/3> a secdoc:ListItem ;
+    secdoc:itemOrder 3 ;
+    secdoc:text "Development and test environments must use synthetic, sample, or otherwise non-production financial data whenever possible." .
+
+<https://nkllon.com/plaid/security-doc/document/privacy-policy/section/5> a secdoc:Section ;
+    secdoc:hasBlock <https://nkllon.com/plaid/security-doc/document/privacy-policy/section/5/block/1>,
+        <https://nkllon.com/plaid/security-doc/document/privacy-policy/section/5/block/2> ;
+    secdoc:headingLevel 2 ;
+    secdoc:sectionOrder 5 ;
+    secdoc:title "Sharing and subprocessors" .
+
+<https://nkllon.com/plaid/security-doc/document/privacy-policy/section/5/block/1> a secdoc:ParagraphBlock ;
+    secdoc:blockOrder 1 ;
+    secdoc:text "Information may be processed by infrastructure and integration providers that support source control, cloud hosting, secret management, logging, and third-party API connectivity." .
+
+<https://nkllon.com/plaid/security-doc/document/privacy-policy/section/5/block/2> a secdoc:ListBlock ;
+    secdoc:blockOrder 2 ;
+    secdoc:hasItem <https://nkllon.com/plaid/security-doc/document/privacy-policy/section/5/block/2/item/1>,
+        <https://nkllon.com/plaid/security-doc/document/privacy-policy/section/5/block/2/item/2>,
+        <https://nkllon.com/plaid/security-doc/document/privacy-policy/section/5/block/2/item/3> ;
+    secdoc:isOrdered false .
+
+<https://nkllon.com/plaid/security-doc/document/privacy-policy/section/5/block/2/item/1> a secdoc:ListItem ;
+    secdoc:itemOrder 1 ;
+    secdoc:text "GitHub and GitHub Actions for source control and CI/CD." .
+
+<https://nkllon.com/plaid/security-doc/document/privacy-policy/section/5/block/2/item/2> a secdoc:ListItem ;
+    secdoc:itemOrder 2 ;
+    secdoc:text "Cloud providers and managed secret stores such as Google Cloud Run, GCP Secret Manager, Azure Key Vault, Azure Databricks, and documented AWS patterns." .
+
+<https://nkllon.com/plaid/security-doc/document/privacy-policy/section/5/block/2/item/3> a secdoc:ListItem ;
+    secdoc:itemOrder 3 ;
+    secdoc:text "Integration providers such as Plaid, Microsoft Graph, SharePoint, and Snowflake when used in runtime environments." .
+
+<https://nkllon.com/plaid/security-doc/document/privacy-policy/section/6> a secdoc:Section ;
+    secdoc:hasBlock <https://nkllon.com/plaid/security-doc/document/privacy-policy/section/6/block/1> ;
+    secdoc:headingLevel 2 ;
+    secdoc:sectionOrder 6 ;
+    secdoc:title "Retention" .
+
+<https://nkllon.com/plaid/security-doc/document/privacy-policy/section/6/block/1> a secdoc:ListBlock ;
+    secdoc:blockOrder 1 ;
+    secdoc:hasItem <https://nkllon.com/plaid/security-doc/document/privacy-policy/section/6/block/1/item/1>,
+        <https://nkllon.com/plaid/security-doc/document/privacy-policy/section/6/block/1/item/2>,
+        <https://nkllon.com/plaid/security-doc/document/privacy-policy/section/6/block/1/item/3> ;
+    secdoc:isOrdered false .
+
+<https://nkllon.com/plaid/security-doc/document/privacy-policy/section/6/block/1/item/1> a secdoc:ListItem ;
+    secdoc:itemOrder 1 ;
+    secdoc:text "Credentials and tokens must be rotated or deleted when no longer required." .
+
+<https://nkllon.com/plaid/security-doc/document/privacy-policy/section/6/block/1/item/2> a secdoc:ListItem ;
+    secdoc:itemOrder 2 ;
+    secdoc:text "Logs must be retained only for the period necessary for troubleshooting, security review, or legal obligations." .
+
+<https://nkllon.com/plaid/security-doc/document/privacy-policy/section/6/block/1/item/3> a secdoc:ListItem ;
+    secdoc:itemOrder 3 ;
+    secdoc:text "Any personal or financial data processed in runtime environments must be retained only for the minimum period required for the service function or legal compliance." .
+
+<https://nkllon.com/plaid/security-doc/document/privacy-policy/section/7> a secdoc:Section ;
+    secdoc:hasBlock <https://nkllon.com/plaid/security-doc/document/privacy-policy/section/7/block/1> ;
+    secdoc:headingLevel 2 ;
+    secdoc:sectionOrder 7 ;
+    secdoc:title "Security safeguards" .
+
+<https://nkllon.com/plaid/security-doc/document/privacy-policy/section/7/block/1> a secdoc:ListBlock ;
+    secdoc:blockOrder 1 ;
+    secdoc:hasItem <https://nkllon.com/plaid/security-doc/document/privacy-policy/section/7/block/1/item/1>,
+        <https://nkllon.com/plaid/security-doc/document/privacy-policy/section/7/block/1/item/2>,
+        <https://nkllon.com/plaid/security-doc/document/privacy-policy/section/7/block/1/item/3>,
+        <https://nkllon.com/plaid/security-doc/document/privacy-policy/section/7/block/1/item/4> ;
+    secdoc:isOrdered false .
+
+<https://nkllon.com/plaid/security-doc/document/privacy-policy/section/7/block/1/item/1> a secdoc:ListItem ;
+    secdoc:itemOrder 1 ;
+    secdoc:text "Encryption in transit is required through HTTPS or provider-managed TLS endpoints." .
+
+<https://nkllon.com/plaid/security-doc/document/privacy-policy/section/7/block/1/item/2> a secdoc:ListItem ;
+    secdoc:itemOrder 2 ;
+    secdoc:text "Managed secret stores or equivalent approved secure tooling must be used for production secrets." .
+
+<https://nkllon.com/plaid/security-doc/document/privacy-policy/section/7/block/1/item/3> a secdoc:ListItem ;
+    secdoc:itemOrder 3 ;
+    secdoc:text "Access tokens, authorization headers, private keys, and plaintext secrets must never be written to logs." .
+
+<https://nkllon.com/plaid/security-doc/document/privacy-policy/section/7/block/1/item/4> a secdoc:ListItem ;
+    secdoc:itemOrder 4 ;
+    secdoc:text "Plaid-connected and other financial-data-adjacent integrations must run only in controlled runtime environments." .
+
+<https://nkllon.com/plaid/security-doc/document/privacy-policy/section/8> a secdoc:Section ;
+    secdoc:hasBlock <https://nkllon.com/plaid/security-doc/document/privacy-policy/section/8/block/1>,
+        <https://nkllon.com/plaid/security-doc/document/privacy-policy/section/8/block/2> ;
+    secdoc:headingLevel 2 ;
+    secdoc:sectionOrder 8 ;
+    secdoc:title "Your choices and requests" .
+
+<https://nkllon.com/plaid/security-doc/document/privacy-policy/section/8/block/1> a secdoc:ParagraphBlock ;
+    secdoc:blockOrder 1 ;
+    secdoc:text "Requests concerning personal information, deletion, or security issues may be directed to the security contact maintained for this repository package." .
+
+<https://nkllon.com/plaid/security-doc/document/privacy-policy/section/8/block/2> a secdoc:ParagraphBlock ;
+    secdoc:blockOrder 2 ;
+    secdoc:text "Where required by law and technically feasible, reasonable efforts will be made to respond to privacy-related requests concerning data controlled by the operator." .
+
+<https://nkllon.com/plaid/security-doc/document/privacy-policy/section/9> a secdoc:Section ;
+    secdoc:hasBlock <https://nkllon.com/plaid/security-doc/document/privacy-policy/section/9/block/1> ;
+    secdoc:headingLevel 2 ;
+    secdoc:sectionOrder 9 ;
+    secdoc:title "Policy updates" .
+
+<https://nkllon.com/plaid/security-doc/document/privacy-policy/section/9/block/1> a secdoc:ParagraphBlock ;
+    secdoc:blockOrder 1 ;
+    secdoc:text "This policy may be updated after material architecture changes, integration changes, legal developments, or security incidents. The latest version published in this repository is the controlling version for this project package." .
+
 <https://nkllon.com/plaid/security-doc/document/readme> a secdoc:Document ;
     secdoc:documentOrder 1 ;
     secdoc:fileStem "README" ;
@@ -9688,6 +9913,7 @@
         <https://nkllon.com/plaid/security-doc/document/incident-response-policy>,
         <https://nkllon.com/plaid/security-doc/document/infrastructure-security>,
         <https://nkllon.com/plaid/security-doc/document/open-source-security-model>,
+        <https://nkllon.com/plaid/security-doc/document/privacy-policy>,
         <https://nkllon.com/plaid/security-doc/document/readme>,
         <https://nkllon.com/plaid/security-doc/document/secrets-management-policy>,
         <https://nkllon.com/plaid/security-doc/document/security>,

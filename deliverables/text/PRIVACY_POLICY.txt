@@ -1,0 +1,58 @@
+Privacy Policy
+
+Purpose and scope
+
+This Privacy Policy describes how the Plaid-related software documentation, demonstration integrations, and associated runtime environments represented in this repository handle personal information and financial-data-adjacent information.
+
+The repository itself is a public code and documentation repository. Public source control is not used as a storage location for live production secrets, Plaid access tokens, or personal financial data.
+
+Information collected
+
+- Repository and collaboration metadata such as GitHub usernames, issue content, pull request content, and commit history.
+- Operational configuration values and credentials only in controlled runtime environments, not in public source control.
+- Technical logs and diagnostics needed to operate integrations, excluding secrets and raw sensitive financial payloads.
+- If a Plaid-connected runtime environment is used, limited account, transaction, balance, or token data strictly necessary to provide the integration function.
+
+How information is used
+
+- To develop, test, secure, and operate software integrations.
+- To authenticate to third-party services and maintain service availability.
+- To investigate incidents, perform debugging, and meet security obligations.
+- To comply with legal obligations or valid requests from regulators or service providers where applicable.
+
+Data minimization and restricted data
+
+- Only the minimum information necessary for the relevant integration or operational function may be processed.
+- Public repositories must not contain live Plaid credentials, access tokens, bank credentials, or raw consumer financial data.
+- Development and test environments must use synthetic, sample, or otherwise non-production financial data whenever possible.
+
+Sharing and subprocessors
+
+Information may be processed by infrastructure and integration providers that support source control, cloud hosting, secret management, logging, and third-party API connectivity.
+
+- GitHub and GitHub Actions for source control and CI/CD.
+- Cloud providers and managed secret stores such as Google Cloud Run, GCP Secret Manager, Azure Key Vault, Azure Databricks, and documented AWS patterns.
+- Integration providers such as Plaid, Microsoft Graph, SharePoint, and Snowflake when used in runtime environments.
+
+Retention
+
+- Credentials and tokens must be rotated or deleted when no longer required.
+- Logs must be retained only for the period necessary for troubleshooting, security review, or legal obligations.
+- Any personal or financial data processed in runtime environments must be retained only for the minimum period required for the service function or legal compliance.
+
+Security safeguards
+
+- Encryption in transit is required through HTTPS or provider-managed TLS endpoints.
+- Managed secret stores or equivalent approved secure tooling must be used for production secrets.
+- Access tokens, authorization headers, private keys, and plaintext secrets must never be written to logs.
+- Plaid-connected and other financial-data-adjacent integrations must run only in controlled runtime environments.
+
+Your choices and requests
+
+Requests concerning personal information, deletion, or security issues may be directed to the security contact maintained for this repository package.
+
+Where required by law and technically feasible, reasonable efforts will be made to respond to privacy-related requests concerning data controlled by the operator.
+
+Policy updates
+
+This policy may be updated after material architecture changes, integration changes, legal developments, or security incidents. The latest version published in this repository is the controlling version for this project package.

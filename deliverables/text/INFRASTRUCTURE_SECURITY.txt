@@ -1,0 +1,57 @@
+Infrastructure Security Description
+
+Overview
+
+The reviewed repository set shows a mixed infrastructure model built around local development environments, GitHub-hosted source control and CI, containerized services, and cloud-provider managed deployment services.
+
+Observed infrastructure patterns
+
+- Local development using Python virtual environments, Conda, Node.js tooling, and .env-style local configuration files
+- Containerized services built from Dockerfiles
+- GitHub Actions for CI validation
+- Google Cloud Run deployment for at least one private integration repository
+- Azure infrastructure definitions for Databricks and Key Vault
+- AWS-oriented architecture documentation for ECS microservices and secret management patterns
+
+Cloud and platform controls
+
+Observed examples:
+
+- nkllon/sharepoint-mcp deploys to Cloud Run using a container image and restricts public access with --no-allow-unauthenticated.
+- nkllon/sharepoint-mcp injects runtime secrets from GCP Secret Manager.
+- louspringer/chatbot-llm includes Azure Key Vault infrastructure with soft delete, purge protection, RBAC authorization, and diagnostic logging.
+- louspringer/azure-databricks-terraform provisions an Azure Databricks workspace through Terraform.
+- louspringer/ecs-microservice-terraform documents an AWS pattern using VPC isolation, security groups, API Gateway, Cognito, CloudWatch, DynamoDB, and AWS Secrets Manager.
+
+Secure configuration expectations
+
+- Infrastructure changes must be version-controlled and reviewed before deployment.
+- Secrets must be injected at runtime from managed secret stores rather than embedded in code or images.
+- Public endpoints must require authentication unless a service is intentionally public and non-sensitive.
+- Managed identity or service account patterns must be preferred over long-lived static credentials when available.
+- Logging must support troubleshooting without capturing secrets.
+
+Container security expectations
+
+- Base images must be maintained and rebuilt regularly.
+- Images must contain application code and dependencies only, not deployment credentials.
+- Containerized services must expose only the ports required for operation.
+
+Network and boundary controls
+
+- Security groups, firewall rules, or equivalent provider-native network controls must be used for cloud-hosted workloads where external exposure exists.
+- Production runtime environments for Plaid-connected or similar financial-data integrations must be separated from development environments.
+
+Financial-data-adjacent integrations
+
+- If Plaid or similar financial integrations are added, credentials, access tokens, and retrieved account data must remain outside public repositories and must be confined to managed secret stores and controlled runtime environments.
+- Any production environment processing financial data must be isolated from development environments and must log access events where supported by the platform.
+
+Logging and redaction requirements
+
+- Authorization headers, access tokens, secrets, private keys, and raw institution credentials must never be written to logs.
+- Application logs must avoid raw financial payloads and must capture only the minimum metadata necessary for troubleshooting and incident response.
+
+Review cadence
+
+- This document must be reviewed at least annually and after any material deployment or architecture change.
