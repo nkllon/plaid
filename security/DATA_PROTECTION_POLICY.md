@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This policy defines how application, integration, and operational data should be protected across development and deployment environments.
+This policy defines how application, integration, and operational data must be protected across development and deployment environments.
 
 ## Data classification
 
@@ -17,11 +17,18 @@ This policy defines how application, integration, and operational data should be
 - `louspringer/chatbot-llm` references sample financial datasets and connected-service credentials for development and deployment.
 - `nkllon/sharepoint-mcp` processes authenticated SharePoint and Microsoft Graph requests and therefore handles access tokens and application credentials in runtime environments.
 
+## Plaid and financial data scope
+
+- Public repositories must not store Plaid client secrets, access tokens, item identifiers, processor tokens, bank credentials, or raw consumer financial data.
+- Plaid-connected or otherwise financial-data-adjacent integrations must run only in controlled runtime environments.
+- Any Plaid tokens, account data, transaction data, balances, or derived financial records must be confined to managed runtime environments and approved secret or data stores, not public source control.
+- Development environments must use synthetic, sample, or otherwise non-production financial data unless a documented exception is approved by the maintainer.
+
 ## Data minimization
 
-- Repositories should store code, configuration templates, and documentation only.
+- Repositories must store code, configuration templates, and documentation only.
 - Sensitive values must be provided at runtime through secret stores or environment injection rather than committed to source control.
-- Development and test environments should use synthetic, sample, or non-production data whenever possible.
+- Development and test environments must use synthetic, sample, or non-production data whenever possible.
 
 ## Encryption in transit
 
@@ -31,20 +38,29 @@ This policy defines how application, integration, and operational data should be
 ## Encryption at rest
 
 - Source code is stored in GitHub-managed storage.
-- Cloud secret stores such as GCP Secret Manager and Azure Key Vault should be used for sensitive values, relying on provider-managed encryption at rest.
-
-Based on typical practices for the environment observed, the following control is assumed:
-
-- Where production data or logs are retained in cloud platforms, encryption at rest is provided by the underlying managed service.
+- Cloud secret stores such as GCP Secret Manager and Azure Key Vault must be used for sensitive values, relying on provider-managed encryption at rest.
+- Where production data or logs are retained in cloud platforms, encryption at rest must be provided by the underlying managed service.
 
 ## Environment separation
 
-- Development, testing, and production values should be separated by distinct environment variables, secret entries, and cloud resources.
+- Development, testing, and production values must be separated by distinct environment variables, secret entries, and cloud resources.
 - Local development must not reuse production secrets unless there is a documented emergency requirement.
 - Production deployment artifacts must be built without embedding secrets in the image or repository.
 
+## Logging and redaction
+
+- Secrets, access tokens, authorization headers, API keys, session cookies, and raw institution credentials must never be logged.
+- Raw financial payloads and full account or transaction records must not be written to application logs except where explicitly required for a controlled incident investigation.
+- Logs used for troubleshooting must be redacted to remove secrets and sensitive personal or financial fields before sharing.
+
 ## Retention and deletion
 
-- Secrets and tokens should be deleted or rotated when no longer required.
-- Logs should avoid storing secrets and should be retained only as long as operationally necessary.
-- Any real customer or financial data introduced into a connected system should be retained only for the minimum period required by application function or legal obligation.
+- Secrets and tokens must be deleted or rotated when no longer required.
+- Logs must avoid storing secrets and must be retained only as long as operationally necessary.
+- Any real customer or financial data introduced into a connected system must be retained only for the minimum period required by application function or legal obligation.
+
+## Review cadence
+
+- This policy must be reviewed at least annually.
+- High-risk integration repositories must be reviewed at least quarterly.
+- This policy must be updated after any material architecture change, introduction of a new financial-data integration, or security incident.

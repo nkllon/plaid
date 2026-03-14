@@ -2,6 +2,19 @@
 
 This directory contains a lightweight but externally reviewable security documentation set for the `nkllon` organization and `louspringer` GitHub account. It is intended for Plaid-style vendor review, repository governance, and solo-developer operational use.
 
+## Files
+
+- `SECURITY_PROGRAM.md`
+- `ACCESS_CONTROL_POLICY.md`
+- `DATA_PROTECTION_POLICY.md`
+- `SECRETS_MANAGEMENT_POLICY.md`
+- `INCIDENT_RESPONSE_POLICY.md`
+- `VULNERABILITY_MANAGEMENT.md`
+- `INFRASTRUCTURE_SECURITY.md`
+- `OPEN_SOURCE_SECURITY_MODEL.md`
+- `THIRD_PARTY_SERVICES.md`
+- `SECURITY_CONTACT.md`
+
 ## Scope
 
 - Primary owners reviewed: `nkllon`, `louspringer`
@@ -71,6 +84,29 @@ The following repositories and files were directly inspected and used as the mai
 - `nkllon/composable-ai-advisors` contains a branch protection proposal document, but that file is a proposal, not proof of enforcement.
 - `louspringer/chatbot-llm` branch protection on `develop` requires one status check (`sourcery/sourcery`), but does not enforce admins.
 - Account-level MFA and organization-wide GitHub settings were not directly observable from repository contents.
+
+## Plaid runtime boundary
+
+- Public repositories in scope are documentation, code, and configuration-template artifacts only.
+- Any Plaid-connected runtime environment must keep client secrets, access tokens, item identifiers, account data, transaction data, and derived financial records outside public source control.
+- Plaid or equivalent financial integrations must run only in controlled runtime environments that use managed secret storage and authenticated access paths.
+
+## Third-party services and subprocessors
+
+The reviewed repositories reference or depend on the following third-party service categories:
+
+- Source control and CI: GitHub, GitHub Actions, Dependabot, GitHub secret scanning
+- Cloud and secret management: Google Cloud Run, GCP Secret Manager, Azure Key Vault, Azure Databricks
+- Infrastructure patterns: AWS ECS, Cognito, CloudWatch, DynamoDB, AWS Secrets Manager
+- External integration providers: Microsoft Graph, SharePoint, Snowflake
+
+These providers are used as infrastructure or integration components. Sensitive runtime credentials must remain in provider-managed secret stores or equivalent approved systems and must not be committed to public repositories.
+
+## Package review cadence
+
+- Policies in this package must be reviewed at least annually.
+- High-risk repositories and integrations must be reviewed at least quarterly.
+- The package must be updated after any material architecture change, new financial-data integration, or security incident.
 
 ## Data handling conclusions
 

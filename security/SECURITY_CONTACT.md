@@ -2,7 +2,7 @@
 
 ## Reporting
 
-Security issues should be reported privately when possible.
+Security issues must be reported privately when possible.
 
 - Security contact email: `security@example.com`
 
@@ -19,7 +19,7 @@ If a private reporting channel is not yet configured, use a private email channe
 ## Response expectations
 
 - Reports will be acknowledged as soon as practical.
-- Critical reports should be triaged immediately upon review.
+- Critical reports must be triaged immediately upon review.
 - Valid reports will be investigated, remediated, and disclosed in a manner appropriate to the severity and exposure.
 
 ## Safe disclosure expectations

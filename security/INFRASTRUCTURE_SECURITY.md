@@ -25,25 +25,33 @@ Observed examples:
 
 ## Secure configuration expectations
 
-- Infrastructure changes should be version-controlled and reviewed before deployment.
+- Infrastructure changes must be version-controlled and reviewed before deployment.
 - Secrets must be injected at runtime from managed secret stores rather than embedded in code or images.
-- Public endpoints should require authentication unless a service is intentionally public and non-sensitive.
-- Managed identity or service account patterns should be preferred over long-lived static credentials when available.
-- Logging should support troubleshooting without capturing secrets.
+- Public endpoints must require authentication unless a service is intentionally public and non-sensitive.
+- Managed identity or service account patterns must be preferred over long-lived static credentials when available.
+- Logging must support troubleshooting without capturing secrets.
 
 ## Container security expectations
 
-- Base images should be maintained and rebuilt regularly.
-- Images should contain application code and dependencies only, not deployment credentials.
-- Containerized services should expose only the ports required for operation.
+- Base images must be maintained and rebuilt regularly.
+- Images must contain application code and dependencies only, not deployment credentials.
+- Containerized services must expose only the ports required for operation.
 
 ## Network and boundary controls
 
-Based on typical practices for the environment observed, the following control is assumed:
-
-- Security groups, firewall rules, or equivalent provider-native network controls are used for cloud-hosted workloads where external exposure exists.
+- Security groups, firewall rules, or equivalent provider-native network controls must be used for cloud-hosted workloads where external exposure exists.
+- Production runtime environments for Plaid-connected or similar financial-data integrations must be separated from development environments.
 
 ## Financial-data-adjacent integrations
 
-- If Plaid or similar financial integrations are added, credentials, access tokens, and retrieved account data must remain outside public repositories and should be confined to managed secret stores and controlled runtime environments.
-- Any production environment processing financial data should be isolated from development environments and should log access events where supported by the platform.
+- If Plaid or similar financial integrations are added, credentials, access tokens, and retrieved account data must remain outside public repositories and must be confined to managed secret stores and controlled runtime environments.
+- Any production environment processing financial data must be isolated from development environments and must log access events where supported by the platform.
+
+## Logging and redaction requirements
+
+- Authorization headers, access tokens, secrets, private keys, and raw institution credentials must never be written to logs.
+- Application logs must avoid raw financial payloads and must capture only the minimum metadata necessary for troubleshooting and incident response.
+
+## Review cadence
+
+- This document must be reviewed at least annually and after any material deployment or architecture change.

@@ -14,7 +14,7 @@ This repository portfolio relies heavily on open source development practices. P
 ## Limits of the model
 
 - Public visibility does not replace formal internal segregation of duties.
-- Open source review is opportunistic; it should not be assumed that every change receives expert external security review.
+- Open source review is opportunistic; not every change receives expert external security review.
 - Security maturity varies across repositories and older repositories may not implement the same controls as newer projects.
 
 ## Public repository rules
@@ -22,9 +22,14 @@ This repository portfolio relies heavily on open source development practices. P
 - No sensitive financial credentials or personal financial data are stored in public repositories.
 - Public repositories may include templates, placeholders, sample values, and integration documentation, but not live production secrets.
 - Operational secrets must be injected at runtime or stored in managed secret systems.
+- Plaid-connected runtimes, access tokens, account data, and derived financial records are outside the scope of public source control and must remain in controlled runtime environments.
 
 ## Review and contribution model
 
 - External users may report issues or propose fixes through standard GitHub workflows.
 - The maintainer is responsible for validating, merging, and deploying security-relevant changes.
-- High-risk integration repositories should receive closer review and stronger branch protections than low-risk experimental repositories.
+- High-risk integration repositories must receive closer review and stronger branch protections than low-risk experimental repositories.
+
+## Review cadence
+
+- This model must be reviewed at least annually and after any material change to financial-data integrations or deployment boundaries.

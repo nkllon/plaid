@@ -8,18 +8,15 @@ This policy defines access control expectations for source code, deployment syst
 
 - GitHub is the system of record for source repository access.
 - Each user must authenticate with an individual GitHub account. Shared accounts are not permitted.
-- Administrative and write access should be limited to the maintainer and explicitly authorized collaborators only.
-
-Based on typical practices for the environment observed, the following control is assumed:
-
+- Administrative and write access must be limited to the maintainer and explicitly authorized collaborators only.
 - Multi-factor authentication is required on GitHub accounts with administrative or write access.
 
 ## Repository permission model
 
 - Public repositories are readable by anyone and are treated as non-secret by design.
-- Private repositories are used for operational details, deployment configurations, or integrations that should not be publicly exposed.
-- Access to private repositories is granted on least-privilege principles.
-- Administrative privileges should be limited to the repository owner and only to accounts necessary to maintain the repository.
+- Private repositories are used for operational details, deployment configurations, or integrations that must not be publicly exposed.
+- Access to private repositories must be granted on least-privilege principles.
+- Administrative privileges must be limited to the repository owner and only to accounts necessary to maintain the repository.
 
 ## Pull requests and branch protection
 
@@ -32,19 +29,20 @@ Observed examples:
 
 Policy expectations:
 
-- Changes to default branches should occur through pull requests whenever practical.
-- Protected branches should disable force pushes and deletions.
-- At least one review should be required for higher-risk repositories where GitHub plan features permit it.
-- Required status checks should be enabled for CI workflows that materially validate build, test, and security posture.
+- Changes to default branches must occur through pull requests.
+- Protected branches must disable force pushes and deletions.
+- High-risk repositories must require at least one pull request review before merge.
+- High-risk repositories must require status checks for CI workflows that materially validate build, test, and security posture.
+- Where a repository does not yet enforce these settings, it must not be represented as fully enforced in external security responses.
 
 ## Administrative access
 
 - Repository administration must be restricted to the owner or designated maintainer accounts.
 - Administrative actions include branch protection changes, repository visibility changes, secret management, and deployment configuration changes.
-- Administrative access should be reviewed during periodic security review.
+- Administrative access must be reviewed at least annually and after any material personnel or ownership change.
 
 ## Service and deployment access
 
 - Cloud deployment credentials must not be embedded in code.
-- Service accounts or cloud identities should be used for deployment automation where supported.
-- Access to cloud consoles, secret stores, and deployment tooling should be restricted to the maintainer and only enabled where operationally required.
+- Service accounts or cloud identities must be used for deployment automation where supported.
+- Access to cloud consoles, secret stores, and deployment tooling must be restricted to the maintainer and only enabled where operationally required.
