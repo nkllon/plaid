@@ -1,0 +1,182 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix secdoc: <https://nkllon.com/plaid/security-doc#> .
+
+secdoc:DocumentPackageShape a sh:NodeShape ;
+    sh:targetClass secdoc:DocumentPackage ;
+    sh:property [
+        sh:path secdoc:hasDocument ;
+        sh:minCount 1 ;
+        sh:class secdoc:Document ;
+    ] .
+
+secdoc:DocumentShape a sh:NodeShape ;
+    sh:targetClass secdoc:Document ;
+    sh:property [
+        sh:path secdoc:title ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+    ] ;
+    sh:property [
+        sh:path secdoc:fileStem ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+    ] ;
+    sh:property [
+        sh:path secdoc:documentOrder ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:integer ;
+    ] ;
+    sh:property [
+        sh:path secdoc:partOfPackage ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class secdoc:DocumentPackage ;
+    ] ;
+    sh:property [
+        sh:path secdoc:hasSection ;
+        sh:minCount 1 ;
+        sh:class secdoc:Section ;
+    ] .
+
+secdoc:SectionShape a sh:NodeShape ;
+    sh:targetClass secdoc:Section ;
+    sh:property [
+        sh:path secdoc:sectionOrder ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:integer ;
+    ] ;
+    sh:property [
+        sh:path secdoc:headingLevel ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:integer ;
+    ] ;
+    sh:property [
+        sh:path secdoc:title ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+    ] ;
+    sh:property [
+        sh:path secdoc:hasBlock ;
+        sh:minCount 1 ;
+        sh:class secdoc:Block ;
+    ] .
+
+secdoc:ParagraphBlockShape a sh:NodeShape ;
+    sh:targetClass secdoc:ParagraphBlock ;
+    sh:property [
+        sh:path secdoc:blockOrder ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:integer ;
+    ] ;
+    sh:property [
+        sh:path secdoc:text ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+    ] .
+
+secdoc:ListBlockShape a sh:NodeShape ;
+    sh:targetClass secdoc:ListBlock ;
+    sh:property [
+        sh:path secdoc:blockOrder ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:integer ;
+    ] ;
+    sh:property [
+        sh:path secdoc:isOrdered ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:boolean ;
+    ] ;
+    sh:property [
+        sh:path secdoc:hasItem ;
+        sh:minCount 1 ;
+        sh:class secdoc:ListItem ;
+    ] .
+
+secdoc:ListItemShape a sh:NodeShape ;
+    sh:targetClass secdoc:ListItem ;
+    sh:property [
+        sh:path secdoc:itemOrder ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:integer ;
+    ] ;
+    sh:property [
+        sh:path secdoc:text ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+    ] .
+
+secdoc:TableBlockShape a sh:NodeShape ;
+    sh:targetClass secdoc:TableBlock ;
+    sh:property [
+        sh:path secdoc:blockOrder ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:integer ;
+    ] ;
+    sh:property [
+        sh:path secdoc:hasColumn ;
+        sh:minCount 1 ;
+        sh:class secdoc:TableColumn ;
+    ] ;
+    sh:property [
+        sh:path secdoc:hasRow ;
+        sh:minCount 1 ;
+        sh:class secdoc:TableRow ;
+    ] .
+
+secdoc:TableColumnShape a sh:NodeShape ;
+    sh:targetClass secdoc:TableColumn ;
+    sh:property [
+        sh:path secdoc:columnOrder ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:integer ;
+    ] ;
+    sh:property [
+        sh:path secdoc:text ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+    ] .
+
+secdoc:TableRowShape a sh:NodeShape ;
+    sh:targetClass secdoc:TableRow ;
+    sh:property [
+        sh:path secdoc:rowOrder ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:integer ;
+    ] ;
+    sh:property [
+        sh:path secdoc:hasCell ;
+        sh:minCount 1 ;
+        sh:class secdoc:TableCell ;
+    ] .
+
+secdoc:TableCellShape a sh:NodeShape ;
+    sh:targetClass secdoc:TableCell ;
+    sh:property [
+        sh:path secdoc:cellOrder ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:integer ;
+    ] ;
+    sh:property [
+        sh:path secdoc:text ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+    ] .

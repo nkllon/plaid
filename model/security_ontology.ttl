@@ -1,0 +1,123 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix secdoc: <https://nkllon.com/plaid/security-doc#> .
+
+secdoc:SecurityDocumentationOntology a owl:Ontology ;
+    rdfs:label "Security Documentation Ontology" ;
+    rdfs:comment "Ontology for modeling Plaid security documentation as structured RDF suitable for validation and OOXML generation." .
+
+secdoc:DocumentPackage a owl:Class ;
+    rdfs:label "Document Package" .
+
+secdoc:Document a owl:Class ;
+    rdfs:label "Document" .
+
+secdoc:Section a owl:Class ;
+    rdfs:label "Section" .
+
+secdoc:Block a owl:Class ;
+    rdfs:label "Block" .
+
+secdoc:ParagraphBlock a owl:Class ;
+    rdfs:subClassOf secdoc:Block ;
+    rdfs:label "Paragraph Block" .
+
+secdoc:ListBlock a owl:Class ;
+    rdfs:subClassOf secdoc:Block ;
+    rdfs:label "List Block" .
+
+secdoc:ListItem a owl:Class ;
+    rdfs:label "List Item" .
+
+secdoc:TableBlock a owl:Class ;
+    rdfs:subClassOf secdoc:Block ;
+    rdfs:label "Table Block" .
+
+secdoc:TableColumn a owl:Class ;
+    rdfs:label "Table Column" .
+
+secdoc:TableRow a owl:Class ;
+    rdfs:label "Table Row" .
+
+secdoc:TableCell a owl:Class ;
+    rdfs:label "Table Cell" .
+
+secdoc:partOfPackage a owl:ObjectProperty ;
+    rdfs:domain secdoc:Document ;
+    rdfs:range secdoc:DocumentPackage .
+
+secdoc:hasDocument a owl:ObjectProperty ;
+    rdfs:domain secdoc:DocumentPackage ;
+    rdfs:range secdoc:Document .
+
+secdoc:hasSection a owl:ObjectProperty ;
+    rdfs:domain secdoc:Document ;
+    rdfs:range secdoc:Section .
+
+secdoc:hasBlock a owl:ObjectProperty ;
+    rdfs:domain secdoc:Section ;
+    rdfs:range secdoc:Block .
+
+secdoc:hasItem a owl:ObjectProperty ;
+    rdfs:domain secdoc:ListBlock ;
+    rdfs:range secdoc:ListItem .
+
+secdoc:hasColumn a owl:ObjectProperty ;
+    rdfs:domain secdoc:TableBlock ;
+    rdfs:range secdoc:TableColumn .
+
+secdoc:hasRow a owl:ObjectProperty ;
+    rdfs:domain secdoc:TableBlock ;
+    rdfs:range secdoc:TableRow .
+
+secdoc:hasCell a owl:ObjectProperty ;
+    rdfs:domain secdoc:TableRow ;
+    rdfs:range secdoc:TableCell .
+
+secdoc:title a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+secdoc:fileStem a owl:DatatypeProperty ;
+    rdfs:domain secdoc:Document ;
+    rdfs:range xsd:string .
+
+secdoc:documentOrder a owl:DatatypeProperty ;
+    rdfs:domain secdoc:Document ;
+    rdfs:range xsd:integer .
+
+secdoc:sectionOrder a owl:DatatypeProperty ;
+    rdfs:domain secdoc:Section ;
+    rdfs:range xsd:integer .
+
+secdoc:headingLevel a owl:DatatypeProperty ;
+    rdfs:domain secdoc:Section ;
+    rdfs:range xsd:integer .
+
+secdoc:blockOrder a owl:DatatypeProperty ;
+    rdfs:domain secdoc:Block ;
+    rdfs:range xsd:integer .
+
+secdoc:text a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+secdoc:isOrdered a owl:DatatypeProperty ;
+    rdfs:domain secdoc:ListBlock ;
+    rdfs:range xsd:boolean .
+
+secdoc:itemOrder a owl:DatatypeProperty ;
+    rdfs:domain secdoc:ListItem ;
+    rdfs:range xsd:integer .
+
+secdoc:columnOrder a owl:DatatypeProperty ;
+    rdfs:domain secdoc:TableColumn ;
+    rdfs:range xsd:integer .
+
+secdoc:rowOrder a owl:DatatypeProperty ;
+    rdfs:domain secdoc:TableRow ;
+    rdfs:range xsd:integer .
+
+secdoc:cellOrder a owl:DatatypeProperty ;
+    rdfs:domain secdoc:TableCell ;
+    rdfs:range xsd:integer .
