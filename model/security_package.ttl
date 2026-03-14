@@ -485,6 +485,248 @@
     secdoc:itemOrder 3 ;
     secdoc:text "Logs used for troubleshooting must be redacted to remove secrets and sensitive personal or financial fields before sharing." .
 
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy> a secdoc:Document ;
+    secdoc:documentOrder 14 ;
+    secdoc:fileStem "DATA_RETENTION_AND_DISPOSAL_POLICY" ;
+    secdoc:hasSection <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/1>,
+        <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/2>,
+        <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/3>,
+        <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/4>,
+        <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/5>,
+        <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/6>,
+        <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/7> ;
+    secdoc:partOfPackage <https://nkllon.com/plaid/security-doc/package/plaid-security-package> ;
+    secdoc:title "Data Retention and Disposal Policy" .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/1> a secdoc:Section ;
+    secdoc:hasBlock <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/1/block/1> ;
+    secdoc:headingLevel 2 ;
+    secdoc:sectionOrder 1 ;
+    secdoc:title "Purpose" .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/1/block/1> a secdoc:ParagraphBlock ;
+    secdoc:blockOrder 1 ;
+    secdoc:text "This policy defines retention, deletion, and disposal requirements for operational data, secrets, logs, and financial-data-adjacent information processed by systems represented in this repository package." .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/2> a secdoc:Section ;
+    secdoc:hasBlock <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/2/block/1> ;
+    secdoc:headingLevel 2 ;
+    secdoc:sectionOrder 2 ;
+    secdoc:title "Scope" .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/2/block/1> a secdoc:ListBlock ;
+    secdoc:blockOrder 1 ;
+    secdoc:hasItem <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/2/block/1/item/1>,
+        <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/2/block/1/item/2>,
+        <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/2/block/1/item/3> ;
+    secdoc:isOrdered false .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/2/block/1/item/1> a secdoc:ListItem ;
+    secdoc:itemOrder 1 ;
+    secdoc:text "Public repository contents, including code, issues, pull requests, and commit metadata." .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/2/block/1/item/2> a secdoc:ListItem ;
+    secdoc:itemOrder 2 ;
+    secdoc:text "Controlled runtime environments used for integrations such as Plaid, Microsoft Graph, SharePoint, Snowflake, and similar services." .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/2/block/1/item/3> a secdoc:ListItem ;
+    secdoc:itemOrder 3 ;
+    secdoc:text "Secrets, tokens, logs, diagnostics, and configuration data managed outside public source control." .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/3> a secdoc:Section ;
+    secdoc:hasBlock <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/3/block/1> ;
+    secdoc:headingLevel 2 ;
+    secdoc:sectionOrder 3 ;
+    secdoc:title "Retention principles" .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/3/block/1> a secdoc:ListBlock ;
+    secdoc:blockOrder 1 ;
+    secdoc:hasItem <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/3/block/1/item/1>,
+        <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/3/block/1/item/2>,
+        <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/3/block/1/item/3> ;
+    secdoc:isOrdered false .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/3/block/1/item/1> a secdoc:ListItem ;
+    secdoc:itemOrder 1 ;
+    secdoc:text "Information must be retained only for the minimum period necessary to support the documented service function, security operations, or legal obligations." .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/3/block/1/item/2> a secdoc:ListItem ;
+    secdoc:itemOrder 2 ;
+    secdoc:text "Sensitive financial or personal data must not be retained solely for convenience." .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/3/block/1/item/3> a secdoc:ListItem ;
+    secdoc:itemOrder 3 ;
+    secdoc:text "Public repositories must not be used as an archival location for live customer data, Plaid tokens, bank credentials, or other restricted data." .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/4> a secdoc:Section ;
+    secdoc:hasBlock <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/4/block/1> ;
+    secdoc:headingLevel 2 ;
+    secdoc:sectionOrder 4 ;
+    secdoc:title "Retention requirements by data type" .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/4/block/1> a secdoc:TableBlock ;
+    secdoc:blockOrder 1 ;
+    secdoc:hasColumn <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/4/block/1/column/1>,
+        <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/4/block/1/column/2> ;
+    secdoc:hasRow <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/4/block/1/row/1>,
+        <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/4/block/1/row/2>,
+        <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/4/block/1/row/3>,
+        <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/4/block/1/row/4>,
+        <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/4/block/1/row/5> .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/4/block/1/column/1> a secdoc:TableColumn ;
+    secdoc:columnOrder 1 ;
+    secdoc:text "Data Type" .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/4/block/1/column/2> a secdoc:TableColumn ;
+    secdoc:columnOrder 2 ;
+    secdoc:text "Retention Rule" .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/4/block/1/row/1> a secdoc:TableRow ;
+    secdoc:hasCell <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/4/block/1/row/1/cell/1>,
+        <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/4/block/1/row/1/cell/2> ;
+    secdoc:rowOrder 1 .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/4/block/1/row/1/cell/1> a secdoc:TableCell ;
+    secdoc:cellOrder 1 ;
+    secdoc:text "Secrets and access tokens" .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/4/block/1/row/1/cell/2> a secdoc:TableCell ;
+    secdoc:cellOrder 2 ;
+    secdoc:text "Retain only while operationally required; rotate or delete immediately when no longer needed or on suspected compromise." .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/4/block/1/row/2> a secdoc:TableRow ;
+    secdoc:hasCell <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/4/block/1/row/2/cell/1>,
+        <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/4/block/1/row/2/cell/2> ;
+    secdoc:rowOrder 2 .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/4/block/1/row/2/cell/1> a secdoc:TableCell ;
+    secdoc:cellOrder 1 ;
+    secdoc:text "Application and infrastructure logs" .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/4/block/1/row/2/cell/2> a secdoc:TableCell ;
+    secdoc:cellOrder 2 ;
+    secdoc:text "Retain only as long as needed for troubleshooting, monitoring, incident response, or legal obligations." .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/4/block/1/row/3> a secdoc:TableRow ;
+    secdoc:hasCell <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/4/block/1/row/3/cell/1>,
+        <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/4/block/1/row/3/cell/2> ;
+    secdoc:rowOrder 3 .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/4/block/1/row/3/cell/1> a secdoc:TableCell ;
+    secdoc:cellOrder 1 ;
+    secdoc:text "Sample or synthetic test data" .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/4/block/1/row/3/cell/2> a secdoc:TableCell ;
+    secdoc:cellOrder 2 ;
+    secdoc:text "Retain only while needed for development or validation." .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/4/block/1/row/4> a secdoc:TableRow ;
+    secdoc:hasCell <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/4/block/1/row/4/cell/1>,
+        <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/4/block/1/row/4/cell/2> ;
+    secdoc:rowOrder 4 .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/4/block/1/row/4/cell/1> a secdoc:TableCell ;
+    secdoc:cellOrder 1 ;
+    secdoc:text "Production financial or personal data" .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/4/block/1/row/4/cell/2> a secdoc:TableCell ;
+    secdoc:cellOrder 2 ;
+    secdoc:text "Retain only for the minimum period required for service delivery, contractual obligations, or legal compliance." .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/4/block/1/row/5> a secdoc:TableRow ;
+    secdoc:hasCell <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/4/block/1/row/5/cell/1>,
+        <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/4/block/1/row/5/cell/2> ;
+    secdoc:rowOrder 5 .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/4/block/1/row/5/cell/1> a secdoc:TableCell ;
+    secdoc:cellOrder 1 ;
+    secdoc:text "Backups containing sensitive data" .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/4/block/1/row/5/cell/2> a secdoc:TableCell ;
+    secdoc:cellOrder 2 ;
+    secdoc:text "Retain only according to backup and recovery requirements and securely delete when expired." .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/5> a secdoc:Section ;
+    secdoc:hasBlock <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/5/block/1> ;
+    secdoc:headingLevel 2 ;
+    secdoc:sectionOrder 5 ;
+    secdoc:title "Disposal and deletion requirements" .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/5/block/1> a secdoc:ListBlock ;
+    secdoc:blockOrder 1 ;
+    secdoc:hasItem <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/5/block/1/item/1>,
+        <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/5/block/1/item/2>,
+        <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/5/block/1/item/3>,
+        <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/5/block/1/item/4> ;
+    secdoc:isOrdered false .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/5/block/1/item/1> a secdoc:ListItem ;
+    secdoc:itemOrder 1 ;
+    secdoc:text "Expired or no-longer-required secrets must be deleted or rotated from managed secret stores and dependent systems." .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/5/block/1/item/2> a secdoc:ListItem ;
+    secdoc:itemOrder 2 ;
+    secdoc:text "Logs and exported data sets reaching the end of their retention period must be securely deleted from managed storage where supported by the platform." .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/5/block/1/item/3> a secdoc:ListItem ;
+    secdoc:itemOrder 3 ;
+    secdoc:text "Temporary files, test exports, and local copies containing sensitive data must be deleted promptly after use." .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/5/block/1/item/4> a secdoc:ListItem ;
+    secdoc:itemOrder 4 ;
+    secdoc:text "If storage media or systems are decommissioned, provider-managed destruction or secure wipe processes must be used where applicable." .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/6> a secdoc:Section ;
+    secdoc:hasBlock <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/6/block/1> ;
+    secdoc:headingLevel 2 ;
+    secdoc:sectionOrder 6 ;
+    secdoc:title "Plaid-specific requirements" .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/6/block/1> a secdoc:ListBlock ;
+    secdoc:blockOrder 1 ;
+    secdoc:hasItem <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/6/block/1/item/1>,
+        <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/6/block/1/item/2>,
+        <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/6/block/1/item/3> ;
+    secdoc:isOrdered false .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/6/block/1/item/1> a secdoc:ListItem ;
+    secdoc:itemOrder 1 ;
+    secdoc:text "Plaid access tokens, item identifiers, and retrieved account or transaction data must remain outside public source control at all times." .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/6/block/1/item/2> a secdoc:ListItem ;
+    secdoc:itemOrder 2 ;
+    secdoc:text "Plaid-related financial data must be retained only for the period necessary to provide the integration function or satisfy legal obligations." .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/6/block/1/item/3> a secdoc:ListItem ;
+    secdoc:itemOrder 3 ;
+    secdoc:text "On account disconnect, credential rotation, or confirmed compromise, affected Plaid tokens and related cached data must be revoked or deleted as soon as practical." .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/7> a secdoc:Section ;
+    secdoc:hasBlock <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/7/block/1> ;
+    secdoc:headingLevel 2 ;
+    secdoc:sectionOrder 7 ;
+    secdoc:title "Review cadence" .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/7/block/1> a secdoc:ListBlock ;
+    secdoc:blockOrder 1 ;
+    secdoc:hasItem <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/7/block/1/item/1>,
+        <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/7/block/1/item/2>,
+        <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/7/block/1/item/3> ;
+    secdoc:isOrdered false .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/7/block/1/item/1> a secdoc:ListItem ;
+    secdoc:itemOrder 1 ;
+    secdoc:text "This policy must be reviewed at least annually." .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/7/block/1/item/2> a secdoc:ListItem ;
+    secdoc:itemOrder 2 ;
+    secdoc:text "This policy must be reviewed after any material architecture change, integration change, or security incident affecting retained data." .
+
+<https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy/section/7/block/1/item/3> a secdoc:ListItem ;
+    secdoc:itemOrder 3 ;
+    secdoc:text "High-risk integrations must be reviewed at least quarterly for retention and disposal compliance." .
+
 <https://nkllon.com/plaid/security-doc/document/incident-response-policy> a secdoc:Document ;
     secdoc:documentOrder 6 ;
     secdoc:fileStem "INCIDENT_RESPONSE_POLICY" ;
@@ -9910,6 +10152,7 @@
 <https://nkllon.com/plaid/security-doc/package/plaid-security-package> a secdoc:DocumentPackage ;
     secdoc:hasDocument <https://nkllon.com/plaid/security-doc/document/access-control-policy>,
         <https://nkllon.com/plaid/security-doc/document/data-protection-policy>,
+        <https://nkllon.com/plaid/security-doc/document/data-retention-and-disposal-policy>,
         <https://nkllon.com/plaid/security-doc/document/incident-response-policy>,
         <https://nkllon.com/plaid/security-doc/document/infrastructure-security>,
         <https://nkllon.com/plaid/security-doc/document/open-source-security-model>,

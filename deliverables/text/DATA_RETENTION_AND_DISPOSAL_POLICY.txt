@@ -1,0 +1,46 @@
+Data Retention and Disposal Policy
+
+Purpose
+
+This policy defines retention, deletion, and disposal requirements for operational data, secrets, logs, and financial-data-adjacent information processed by systems represented in this repository package.
+
+Scope
+
+- Public repository contents, including code, issues, pull requests, and commit metadata.
+- Controlled runtime environments used for integrations such as Plaid, Microsoft Graph, SharePoint, Snowflake, and similar services.
+- Secrets, tokens, logs, diagnostics, and configuration data managed outside public source control.
+
+Retention principles
+
+- Information must be retained only for the minimum period necessary to support the documented service function, security operations, or legal obligations.
+- Sensitive financial or personal data must not be retained solely for convenience.
+- Public repositories must not be used as an archival location for live customer data, Plaid tokens, bank credentials, or other restricted data.
+
+Retention requirements by data type
+
+Data Type | Retention Rule
+--- | ---
+Secrets and access tokens | Retain only while operationally required; rotate or delete immediately when no longer needed or on suspected compromise.
+Application and infrastructure logs | Retain only as long as needed for troubleshooting, monitoring, incident response, or legal obligations.
+Sample or synthetic test data | Retain only while needed for development or validation.
+Production financial or personal data | Retain only for the minimum period required for service delivery, contractual obligations, or legal compliance.
+Backups containing sensitive data | Retain only according to backup and recovery requirements and securely delete when expired.
+
+Disposal and deletion requirements
+
+- Expired or no-longer-required secrets must be deleted or rotated from managed secret stores and dependent systems.
+- Logs and exported data sets reaching the end of their retention period must be securely deleted from managed storage where supported by the platform.
+- Temporary files, test exports, and local copies containing sensitive data must be deleted promptly after use.
+- If storage media or systems are decommissioned, provider-managed destruction or secure wipe processes must be used where applicable.
+
+Plaid-specific requirements
+
+- Plaid access tokens, item identifiers, and retrieved account or transaction data must remain outside public source control at all times.
+- Plaid-related financial data must be retained only for the period necessary to provide the integration function or satisfy legal obligations.
+- On account disconnect, credential rotation, or confirmed compromise, affected Plaid tokens and related cached data must be revoked or deleted as soon as practical.
+
+Review cadence
+
+- This policy must be reviewed at least annually.
+- This policy must be reviewed after any material architecture change, integration change, or security incident affecting retained data.
+- High-risk integrations must be reviewed at least quarterly for retention and disposal compliance.
